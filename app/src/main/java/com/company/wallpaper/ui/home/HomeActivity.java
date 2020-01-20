@@ -5,23 +5,28 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 
 import com.company.wallpaper.R;
+import com.company.wallpaper.app.BaseFragment;
 import com.company.wallpaper.app.MVVMActivity;
 import com.company.wallpaper.databinding.ActivityHomeBinding;
 import com.company.wallpaper.databinding.DialogPrivacyBinding;
+import com.company.wallpaper.ui.PaperListActivity;
 import com.company.wallpaper.ui.WebViewActivity;
 import com.company.wallpaper.utils.ShareUtils;
 import com.company.wallpaper.view.CustomDialog;
 import com.company.wallpaper.viewmodel.HomeActivityViewModel;
+import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ysy.commonlib.utils.Utils;
 
 import java.util.ArrayList;
 
 public class HomeActivity extends MVVMActivity<ActivityHomeBinding, HomeActivityViewModel> {
-    private ArrayList<Fragment> fragments = new ArrayList<>();
+    private ArrayList<BaseFragment> fragments = new ArrayList<>();
     private FragmentTransaction transaction;
 
     @Override
@@ -50,8 +55,42 @@ public class HomeActivity extends MVVMActivity<ActivityHomeBinding, HomeActivity
         initWindow(this);
         initContentFragment();
         initTabView();
+        initViewPager();
         showContentView();
         changeBackMode();
+
+    }
+
+    private void initViewPager() {
+        fragments.add(new HomePageFragment());
+        fragments.add(new SearchFragment());
+        fragments.add(new WallpagerFragment());
+        bindingView.vpHome.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+        bindingView.vpHome.setOffscreenPageLimit(3);
+        SmartTabLayout layout = bindingView.titleBar.getCenterCustomView().findViewById(R.id.tab_list);
+        layout.setViewPager(bindingView.vpHome);
+    }
+
+    private class MyPagerAdapter extends FragmentStatePagerAdapter {
+        private String[] tabs = {"商品", "详情", "评价"};
+        public MyPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return tabs[position];
+        }
+        @Override
+        public int getCount() {
+            return fragments.size();
+        }
+
+
+
+        @Override
+        public BaseFragment getItem(int position) {
+            return fragments.get(position);
+        }
 
     }
 
@@ -59,6 +98,10 @@ public class HomeActivity extends MVVMActivity<ActivityHomeBinding, HomeActivity
     protected boolean isSwipeBackEnable() {
         return false;
     }
+    private void initTab(){
+
+    }
+
 
     @Override
     protected boolean isChangeStateBar() {
@@ -67,35 +110,35 @@ public class HomeActivity extends MVVMActivity<ActivityHomeBinding, HomeActivity
 
 
     private void initTabView() {
-        BottomNavigationView navigationView = bindingView.navigationHome;
-        navigationView.setItemHorizontalTranslationEnabled(false);
-        navigationView.setItemIconTintList(null);
-        navigationView.setOnNavigationItemSelectedListener(menuItem -> {
-            if (menuItem.getItemId() == R.id.tab4) {
-                Utils.setStatusTextColor(false, this);
-            } else {
-                Utils.setStatusTextColor(true, this);
-            }
-            switch (menuItem.getItemId()) {
-                case R.id.tab1: {
-                    showFragment(0);
-                    return true;
-                }
-                case R.id.tab2: {
-                    showFragment(1);
-                    return true;
-                }
-                case R.id.tab3: {
-                    showFragment(2);
-                    return true;
-                }
-                case R.id.tab4: {
-                    showFragment(3);
-                    return true;
-                }
-            }
-            return false;
-        });
+//        BottomNavigationView navigationView = bindingView.navigationHome;
+//        navigationView.setItemHorizontalTranslationEnabled(false);
+//        navigationView.setItemIconTintList(null);
+//        navigationView.setOnNavigationItemSelectedListener(menuItem -> {
+//            if (menuItem.getItemId() == R.id.tab4) {
+//                Utils.setStatusTextColor(false, this);
+//            } else {
+//                Utils.setStatusTextColor(true, this);
+//            }
+//            switch (menuItem.getItemId()) {
+//                case R.id.tab1: {
+//                    showFragment(0);
+//                    return true;
+//                }
+//                case R.id.tab2: {
+//                    showFragment(1);
+//                    return true;
+//                }
+//                case R.id.tab3: {
+//                    showFragment(2);
+//                    return true;
+//                }
+//                case R.id.tab4: {
+//                    showFragment(3);
+//                    return true;
+//                }
+//            }
+//            return false;
+//        });
     }
 
     private void showFragment(int position) {
@@ -112,21 +155,21 @@ public class HomeActivity extends MVVMActivity<ActivityHomeBinding, HomeActivity
 
 
     private void initContentFragment() {
-        if (fragments.size() == 0) {
-            fragments.add(new HomePageFragment());
-            fragments.add(new SearchFragment());
-            fragments.add(new WallpagerFragment());
-            fragments.add(new UserInfoFragment());
-            transaction = getSupportFragmentManager().beginTransaction();
-            transaction.add(R.id.fl_home, fragments.get(0));
-            transaction.add(R.id.fl_home, fragments.get(1));
-            transaction.add(R.id.fl_home, fragments.get(2));
-            transaction.add(R.id.fl_home, fragments.get(3));
-            transaction.hide(fragments.get(1));
-            transaction.hide(fragments.get(2));
-            transaction.hide(fragments.get(3));
-            transaction.commitAllowingStateLoss();
-        }
+//        if (fragments.size() == 0) {
+//            fragments.add(new HomePageFragment());
+//            fragments.add(new SearchFragment());
+//            fragments.add(new WallpagerFragment());
+//            fragments.add(new UserInfoFragment());
+//            transaction = getSupportFragmentManager().beginTransaction();
+//            transaction.add(R.id.fl_home, fragments.get(0));
+//            transaction.add(R.id.fl_home, fragments.get(1));
+//            transaction.add(R.id.fl_home, fragments.get(2));
+//            transaction.add(R.id.fl_home, fragments.get(3));
+//            transaction.hide(fragments.get(1));
+//            transaction.hide(fragments.get(2));
+//            transaction.hide(fragments.get(3));
+//            transaction.commitAllowingStateLoss();
+//        }
     }
 
     @Override

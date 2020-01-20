@@ -3,7 +3,7 @@ package com.company.wallpaper.bean;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
-import com.android.databinding.library.baseAdapters.BR;
+
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class ListHistoryBean extends BaseObservable {
 
     public void setList(List<String> list) {
         this.list = list;
-        notifyPropertyChanged(BR.list);
+        notifyPropertyChanged(com.company.wallpaper.BR.list);
     }
 
     public ListHistoryBean(List<String> list) {

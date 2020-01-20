@@ -1,0 +1,84 @@
+/**
+ * 全局统一配置文件
+ */
+ext {
+    /**
+     * true 每个module可以分别进行开发调试
+     * false 所有module都以lib形式运行
+     */
+    isModule = false
+    /**
+     * App信息统一配置®
+     */
+    appInfo = [
+            applicationId   : "com.company.wallpaper",
+            minSdkVersion   : 19,
+            targetSdkVersion: 28,
+            versionCode     : 6,
+            versionName     : "1.5"
+    ]
+    versions = [
+            androidSupportSdkVersion       : "28.0.0",
+            androidSupportV4Version        : "support-v4:28.0.0-rc01",
+            androidSupportDesignVersion    : "28.0.0-rc01",
+            androidSupportConstraintVersion: "1.1.3",
+            lifecycle_Version              : '1.1.1',
+            smartrefresh_Version           : '1.1.0-alpha-14',
+            banner_Version                 : "1.4.10",
+            retrofit2_Version              : '2.4.0',
+            rxjava2_Version                : '2.2.0',
+            rxandroid_Version              : '2.0.2',
+            okhttp3_Version                : '3.10.0',
+            okhttp_logging_Version         : "3.9.1",
+            gson_Version                   : '2.8.5',
+            logger_Version                 : "2.2.0",
+            stetho_Version                 : "1.5.0",
+    ]
+
+    dependencies = [
+            "appcompat_v7"              : "com.android.support:appcompat-v7:${versions["androidSupportSdkVersion"]}",
+            "support_v4"                : "com.android.support:${versions["androidSupportV4Version"]}",
+            "support_design"            : "com.android.support:design:${versions["androidSupportDesignVersion"]}",
+            "support_constraint"        : "com.android.support.constraint:constraint-layout:${versions["androidSupportConstraintVersion"]}",
+            //lifecycle
+            "lifecycle_extensions"      : "android.arch.lifecycle:extensions:${versions["lifecycle_Version"]}",
+            "lifecycle_reactivestreams" : "android.arch.lifecycle:reactivestreams:${versions["lifecycle_Version"]}",
+            //pullToRefresh
+            "smartrefresh"              : "com.scwang.smartrefresh:SmartRefreshLayout:${versions["smartrefresh_Version"]}",
+            "smartrefresh_header"       : "com.scwang.smartrefresh:SmartRefreshHeader:${versions["smartrefresh_Version"]}",
+            //banner
+            "banner"                    : "com.youth.banner:banner:${versions["banner_Version"]}",
+            //retrofit
+            "retrofit2"                 : "com.squareup.retrofit2:retrofit:${versions["retrofit2_Version"]}",
+            "retrofit2_converter_gson"  : "com.squareup.retrofit2:converter-gson:${versions["retrofit2_Version"]}",
+            "retrofit2_adapter_rxjava2" : "com.squareup.retrofit2:adapter-rxjava2:${versions["retrofit2_Version"]}",
+            //rxJava
+            "rxjava2"                   : "io.reactivex.rxjava2:rxjava:${versions["rxjava2_Version"]}",
+            "rxandroid"                 : "io.reactivex.rxjava2:rxandroid:${versions["rxandroid_Version"]}",
+            //OkHttp
+            "okhttp3"                   : "com.squareup.okhttp3:okhttp:${versions["okhttp3_Version"]}",
+            "okhttp_logging_interceptor": "com.squareup.okhttp3:logging-interceptor:${versions["okhttp_logging_Version"]}",
+            //Gson
+            "gson"                      : "com.google.code.gson:gson:${versions["gson_Version"]}",
+            //logger
+            "logger"                    : "com.orhanobut:logger:${versions["logger_Version"]}",
+            //stetho
+            "stetho"                    : "com.facebook.stetho:stetho:${versions["stetho_Version"]}",
+            "stetho_okhttp"             : "com.facebook.stetho:stetho-okhttp3:${versions["stetho_Version"]}",
+            //swipeBack侧滑退出
+            "swipeback"                 : 'com.jude:swipebackhelper:2.1.5',
+            //titleBar
+            "titlebar"                  : "com.wuhenzhizao:titlebar:1.1.3",
+            "y_divideritemdecoration"   : 'com.yanyusong.y_divideritemdecoration:y_divideritemdecoration:2.0',
+            "jsoup"                     : 'org.jsoup:jsoup:1.10.2',
+            "badgeview"                 : 'q.rorbin:badgeview:1.1.3',
+            "rxpermission"              : 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar',
+            "qmui"                      : 'com.qmuiteam:qmui:1.2.0',
+            "DragPhotoView"             : 'com.bm.photoview:library:1.4.1',
+            "imgSelector"               : 'com.github.lovetuzitong:MultiImageSelector:1.2',
+            "jsbridge"                  : 'com.github.lzyzsd:jsbridge:1.0.4',
+            "lubanImgCompress"               : 'top.zibin:Luban:1.1.8'
+
+    ]
+
+}

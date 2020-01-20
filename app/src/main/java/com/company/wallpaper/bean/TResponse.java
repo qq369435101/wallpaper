@@ -3,7 +3,8 @@ package com.company.wallpaper.bean;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
-import com.android.databinding.library.baseAdapters.BR;
+
+
 
 import java.io.Serializable;
 
@@ -41,7 +42,7 @@ public class TResponse<Data> extends BaseObservable implements Serializable {
 
     public void setData(Data data) {
         this.data = data;
-        notifyPropertyChanged(BR.data);
+        notifyPropertyChanged(com.ysy.commonlib.BR.data);
     }
 
     public void setMsg(String msg) {
