@@ -1,0 +1,336 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="type"
+            type="Integer" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="02:21"
+            android:textColor="@color/white"
+            android:textSize="50dp"
+            android:visibility="@{type==1?View.VISIBLE:View.GONE}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_md"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="11月15日  星期五"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:visibility="@{type==1?View.VISIBLE:View.GONE}"
+            app:layout_constraintStart_toStartOf="@+id/tv_time"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time" />
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:drawableTop="@drawable/instagram"
+            android:gravity="center"
+            android:text="Instagram"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:visibility="@{type==2?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toStartOf="@id/tv_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/rise_up"
+            android:gravity="center"
+            android:text="Rise up"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:visibility="@{type==2?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toStartOf="@id/tv_3"
+            app:layout_constraintStart_toEndOf="@+id/tv_1"
+            app:layout_constraintTop_toTopOf="@+id/tv_1" />
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/poshmark"
+            android:gravity="center"
+            android:text="Poshmark"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:visibility="@{type==2?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toStartOf="@id/tv_4"
+            app:layout_constraintStart_toEndOf="@+id/tv_2"
+            app:layout_constraintTop_toTopOf="@+id/tv_1" />
+
+        <TextView
+            android:id="@+id/tv_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/paper_io"
+            android:gravity="center"
+            android:text="Paper io"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:visibility="@{type==2?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_3"
+            app:layout_constraintTop_toTopOf="@+id/tv_1" />
+
+        <TextView
+            android:id="@+id/tv_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableTop="@drawable/discord"
+            android:gravity="center"
+            android:text="Discord"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:visibility="@{type==2?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toStartOf="@id/tv_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_1" />
+
+        <TextView
+            android:id="@+id/tv_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/bumble"
+            android:gravity="center"
+            android:text="Bumble"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:visibility="@{type==2?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toStartOf="@id/tv_3"
+            app:layout_constraintStart_toEndOf="@+id/tv_1"
+            app:layout_constraintTop_toTopOf="@id/tv_5" />
+
+        <TextView
+            android:id="@+id/tv_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/airbnb"
+            android:gravity="center"
+            android:text="Airbnb"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:visibility="@{type==2?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toStartOf="@id/tv_4"
+            app:layout_constraintStart_toEndOf="@+id/tv_2"
+            app:layout_constraintTop_toTopOf="@id/tv_5" />
+
+        <TextView
+            android:id="@+id/tv_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/twitter"
+            android:gravity="center"
+            android:text="Twitter"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:visibility="@{type==2?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_7"
+            app:layout_constraintTop_toTopOf="@id/tv_5" />
+
+        <TextView
+            android:id="@+id/tv_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableTop="@drawable/tinder"
+            android:gravity="center"
+            android:text="Tinder"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:visibility="@{type==2?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toStartOf="@id/tv_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_5" />
+
+        <TextView
+            android:id="@+id/tv_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/roku"
+            android:gravity="center"
+            android:text="Roku"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:visibility="@{type==2?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toStartOf="@id/tv_3"
+            app:layout_constraintStart_toEndOf="@+id/tv_1"
+            app:layout_constraintTop_toTopOf="@id/tv_9" />
+
+        <TextView
+            android:id="@+id/tv_11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/facebook"
+            android:gravity="center"
+            android:text="Facebook"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:visibility="@{type==2?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toStartOf="@id/tv_4"
+            app:layout_constraintStart_toEndOf="@+id/tv_2"
+            app:layout_constraintTop_toTopOf="@id/tv_9" />
+
+        <TextView
+            android:id="@+id/tv_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/cash_app"
+            android:gravity="center"
+            android:text="Cash App"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:visibility="@{type==2?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_7"
+            app:layout_constraintTop_toTopOf="@id/tv_9" />
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:background="#aa000000"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tv_back"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/icon_arrow_left_right"
+                android:gravity="center"
+                android:text="返回"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_browse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/icon_eye_white"
+                android:gravity="center"
+                android:text="预览"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_down"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/icon_down_white"
+                android:gravity="center"
+                android:text="下载"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_share"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/icon_share_white"
+                android:gravity="center"
+                android:text="分享"
+                android:textColor="@color/white" />
+
+
+            <LinearLayout
+                android:id="@+id/tv_collect"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.company.wallpaper.view.PhotoSizeImageView
+                    android:id="@+id/iv_collect"
+                    android:layout_width="27.33dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_uncollect_img" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="收藏"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_classify"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.company.wallpaper.view.PhotoSizeImageView
+                    android:id="@+id/iv_paper"
+                    android:layout_width="27.33dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/tv_classify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/express_container"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#D5D5D5"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

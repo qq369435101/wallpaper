@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/ll_cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white">
+
+        <com.company.wallpaper.view.CircleImageView
+            android:id="@+id/cir_user_head"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_type_name"
+            style="@style/NormalTextStyle"
+            android:layout_marginStart="20dp"
+            android:text="抖音"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cir_user_head"
+            app:layout_constraintStart_toEndOf="@+id/cir_user_head"
+            app:layout_constraintTop_toTopOf="@+id/cir_user_head" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/backgroundColor"
+            android:drawableEnd="@drawable/agg_arrow_right_normal"
+            android:padding="12dp"
+            android:text="一款可以拍摄短视频的音乐创意"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@+id/cir_user_head"
+            app:layout_constraintTop_toBottomOf="@+id/cir_user_head" />
+
+        <com.company.wallpaper.view.PhotoSizeImageView
+            android:id="@+id/iv_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintEnd_toStartOf="@+id/iv_1"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="10dp"
+            app:ratio="1.5" />
+
+        <com.company.wallpaper.view.PhotoSizeImageView
+            android:id="@+id/iv_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/iv_main"
+            app:layout_constraintTop_toTopOf="@+id/iv_main"
+            app:ratio="1.5" />
+
+        <FrameLayout
+            android:id="@+id/fad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_1" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

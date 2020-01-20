@@ -1,0 +1,23 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="app_normal_margin">10dp</dimen>
+    <dimen name="app_plus_margin">12dp</dimen>
+    <dimen name="app_tiny_margin">4dp</dimen>
+
+    <dimen name="font_larger">16sp</dimen>
+    <dimen name="font_normal">14sp</dimen>
+    <dimen name="font_small">10sp</dimen>
+
+    <dimen name="bottom_dialog_top_icon">38dp</dimen>
+    <dimen name="bottom_dialog_left_icon">32dp</dimen>
+
+    <dimen name="dkplayer_controller_height">46dp</dimen>
+    <dimen name="dkplayer_controller_icon_padding">12dp</dimen>
+    <dimen name="dkplayer_controller_text_size">16sp</dimen>
+    <dimen name="dkplayer_default_spacing">10dp</dimen>
+    <dimen name="dkplayer_controller_seekbar_size_n">14dp</dimen>
+    <dimen name="dkplayer_controller_seekbar_size_s">14dp</dimen>
+    <dimen name="dkplayer_controller_seekbar_max_size">1dp</dimen>
+    <dimen name="dkplayer_play_btn_size">50dp</dimen>
+    <dimen name="dkplayer_controller_time_text_size">14sp</dimen>
+</resources>

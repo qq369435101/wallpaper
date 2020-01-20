@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/withe">
+
+
+        <RelativeLayout
+            android:id="@+id/splash_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000">
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/withe"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_splash" />
+
+            <TextView
+                android:id="@+id/btn_skip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/selector_jump_pressed"
+                android:clickable="true"
+                android:paddingLeft="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp"
+                android:text="跳过5s"
+                android:textColor="@color/withe"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

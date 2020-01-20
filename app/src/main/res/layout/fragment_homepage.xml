@@ -1,0 +1,150 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ll_homepage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/withe"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/shape_circle_background_grey"
+            android:drawableStart="@mipmap/icon_search"
+            android:drawablePadding="8dp"
+            android:paddingStart="9dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="搜索"
+            android:textColor="@color/fontGrey"
+            android:textSize="18dp" />
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlEnableLoadMore="true"
+            android:background="@color/backgroundColor"
+            app:srlEnablePreviewInEditMode="true">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <com.youth.banner.Banner
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="165dp"
+                        android:background="@color/withe"
+                        android:visibility="gone"
+                        app:delay_time="7000"
+
+                        app:image_scale_type="fit_xy"
+                        app:indicator_drawable_selected="@drawable/shape_circle_background"
+                        app:indicator_drawable_unselected="@drawable/shape_indicator"
+                        app:indicator_height="5dp"
+                        app:indicator_margin="4dp"
+                        app:indicator_width="12dp"
+                        app:is_auto_play="true" />
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:background="@color/withe"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingTop="7dp"
+                        android:paddingEnd="10dp">
+
+                        <TextView
+                            android:id="@+id/tv_1"
+                            style="@style/HomeTabTextStyle"
+                            android:layout_gravity="center"
+                            android:drawableTop="@mipmap/ic_launcher"
+
+                            android:text="动态壁纸" />
+
+                        <TextView
+                            style="@style/HomeTabTextStyle"
+                            android:drawableTop="@mipmap/ic_launcher"
+                            android:text="头像" />
+
+                        <TextView
+                            style="@style/HomeTabTextStyle"
+                            android:drawableTop="@mipmap/ic_launcher"
+                            android:text="天生一对" />
+
+                        <TextView
+                            style="@style/HomeTabTextStyle"
+                            android:drawableTop="@mipmap/ic_launcher"
+                            android:text="抖音最火壁纸" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:background="@color/withe"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:visibility="gone"
+                        android:paddingTop="7dp"
+                        android:paddingEnd="10dp">
+
+                        <TextView
+                            style="@style/HomeTabTextStyle"
+                            android:layout_gravity="center"
+                            android:drawableTop="@mipmap/ic_launcher"
+                            android:text="表情包" />
+
+                        <TextView
+                            style="@style/HomeTabTextStyle"
+                            android:drawableTop="@mipmap/ic_launcher"
+                            android:text="聊天背景" />
+
+                        <TextView
+                            style="@style/HomeTabTextStyle"
+                            android:drawableTop="@mipmap/ic_launcher"
+                            android:text="主题套图" />
+
+                        <TextView
+                            style="@style/HomeTabTextStyle"
+                            android:drawableTop="@mipmap/ic_launcher"
+                            android:text="情侣头像" />
+                    </LinearLayout>
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rec_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/backgroundColor"
+                        android:orientation="vertical"
+                        app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+</layout>

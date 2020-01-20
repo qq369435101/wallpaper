@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/ll_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/withe"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/shape_circle_background_grey"
+                android:drawableStart="@mipmap/icon_search"
+                android:drawablePadding="8dp"
+                android:paddingStart="9dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="搜索"
+                android:textColor="@color/fontGrey"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_sort"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@color/withe"
+                    android:orientation="vertical"
+                    app:layoutManager="android.support.v7.widget.GridLayoutManager" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/backgroundColor" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_classify"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="5"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="AutoFlowLayout">
+        <attr name="singleLine" format="boolean"></attr>
+        <attr name="maxLines" format="integer"></attr>
+        <attr name="multiChecked" format="boolean"></attr>
+        <attr name="horizontalSpace" format="dimension"></attr>
+        <attr name="verticalSpace" format="dimension"></attr>
+        <attr name="columnNumbers" format="integer"></attr>
+        <attr name="rowNumbers" format="integer"></attr>
+        <attr name="cutLineWidth" format="dimension"></attr>
+        <attr name="cutLineColor" format="color"></attr>
+        <attr name="cutLine" format="boolean"></attr>
+        <attr name="lineCenter" format="boolean"></attr>
+    </declare-styleable>
+    <declare-styleable name="MyProgressBar"> <!-- 进度条默认的样式 -->
+        <attr name="back_line_color" format="color" />
+        <attr name="back_line_height" format="dimension" /> <!-- 展示进度的样式 -->
+        <attr name="fore_line_color" format="color" />
+        <attr name="fore_line_height" format="dimension" /> <!-- 三角形的颜色和高度 -->
+        <attr name="indicator_color" format="color" />
+        <attr name="indicator_height" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="SwipeMenuLayout">
+        <attr name="swipeEnable" format="boolean"/>
+        <attr name="ios" format="boolean"/>
+        <attr name="leftSwipe" format="boolean"/>
+    </declare-styleable>
+
+</resources>

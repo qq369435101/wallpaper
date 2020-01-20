@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isMessage"
+            type="Boolean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.wuhenzhizao.titlebar.widget.CommonTitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onBack="@{true}"
+            app:centerText="登录"
+            app:rightText="注册"
+            app:rightTextColor="@color/fontRed"
+            app:rightType="textView"
+            titlebar:centerType="textView"
+            titlebar:fillStatusBar="false"
+            titlebar:leftDrawable="@color/withe"
+            titlebar:leftType="imageButton"
+            titlebar:showBottomLine="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="7dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_marginTop="15dp"
+                android:text="欢迎登录壁纸"
+                android:textColor="@color/fontBlack"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_blur_bac_rect"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="手机号"
+                    android:textColor="@color/fontBlack"
+                    android:textSize="14dp" />
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="请输入您的手机号"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:maxLines="1"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_blur_bac_rect"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"
+                    android:text='@{!isMessage? "密码    ":"验证码"}'
+                    android:textColor="@color/fontNormal"
+                    android:textSize="14dp" />
+
+                <EditText
+                    android:id="@+id/et_pass_code"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint='@{!isMessage? "请输入您的密码":"请输入您的验证码"}'
+                    android:inputType="textPassword"
+                    android:maxLength="6"
+                    android:maxLines="1"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:textSize="14dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/fontNormal"
+                    android:visibility="@{isMessage?View.VISIBLE:View.GONE}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:onClick="sendMsg"
+                    android:text="获取验证码"
+                    android:visibility="@{isMessage?View.VISIBLE:View.GONE}" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:onClick="changeWay"
+                android:text='@{isMessage? "账号密码登录":"验证码登录"}' />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="67dp"
+            android:layout_marginEnd="13dp"
+            android:background="@drawable/shape_rect_red_gradient"
+            android:onClick="Login"
+            android:text="登录"
+            android:textColor="@color/withe"
+            android:textSize="18dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/colorLineDeep" />
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:text="微信登录"
+                android:textColor="@color/gray" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/colorLineDeep" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_wechat_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/icon_wechat_login" />
+    </LinearLayout>
+</layout>

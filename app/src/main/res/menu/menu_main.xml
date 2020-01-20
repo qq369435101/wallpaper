@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/tab1"
+        android:enabled="true"
+        android:icon="@drawable/selector_maintab1_icon"
+        android:title="首页"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/tab2"
+        android:enabled="true"
+        android:icon="@drawable/selector_maintab2_icon"
+        android:title="分类"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/tab3"
+        android:enabled="true"
+        android:icon="@drawable/selector_maintab3_icon"
+        android:title="动态壁纸"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/tab4"
+        android:enabled="true"
+        android:icon="@drawable/selector_maintab4_icon"
+        android:title="我的"
+        app:showAsAction="ifRoom" />
+
+</menu>

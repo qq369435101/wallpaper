@@ -1,0 +1,170 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="bean"
+            type="com.company.wallpaper.bean.UserInfoBean" />
+
+    </data>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/withe"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:srlEnablePreviewInEditMode="true">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="240dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bg_personal_heade"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+                            android:id="@+id/iv_head"
+                            android:displayHeadImg="@{bean.userAvator}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="50dp"
+                            android:clickable="true"
+                            android:src="@drawable/icon_personal_defalut"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:qmui_border_color="?attr/qmui_config_color_gray_6"
+                            app:qmui_border_width="1px"
+                            app:qmui_is_circle="true"
+                            app:qmui_selected_border_color="?attr/qmui_config_color_gray_4"
+                            app:qmui_selected_border_width="1px"
+                            app:qmui_selected_mask_color="?attr/qmui_config_color_gray_8" />
+
+                        <TextView
+                            android:id="@+id/tv_user_name"
+                            style="@style/NormalTextStyle"
+                            android:text='@{bean!=null?bean.loginName:"请登录"}'
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toEndOf="@+id/iv_head"
+                            app:layout_constraintStart_toStartOf="@+id/iv_head"
+                            app:layout_constraintTop_toBottomOf="@+id/iv_head" />
+
+                        <TextView
+                            android:id="@+id/tv_message"
+                            style="@style/NormalTextStyle"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginBottom="10dp"
+                            android:drawableTop="@drawable/icon_message"
+                            android:drawablePadding="3dp"
+                            android:text="我的消息"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_setting"
+                            style="@style/NormalTextStyle"
+                            android:layout_marginEnd="40dp"
+                            android:layout_marginBottom="10dp"
+                            android:drawableTop="@drawable/icon_setting"
+                            android:drawablePadding="3dp"
+                            android:text="设置"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+                    </android.support.constraint.ConstraintLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:padding="10dp"
+                            android:src="@drawable/icon_new_message" />
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/backgroundColor"/>
+                        <com.sunfusheng.marqueeview.MarqueeView
+                            android:id="@+id/marqueeView"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            app:mvAnimDuration="1000"
+                            app:mvDirection="bottom_to_top"
+                            app:mvInterval="3000"
+                            app:mvSingleLine="true"
+                            app:mvTextColor="@color/fontRed"
+                            app:mvTextSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@color/backgroundColor" />
+
+                    <TextView
+                        style="@style/NormalTextStyle"
+                        android:padding="7dp"
+                        android:text="我的壁纸" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/backgroundColor" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_userinfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:RecRowCount="@{3}"
+                        android:nestedScrollingEnabled="false" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@color/backgroundColor" />
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+</layout>

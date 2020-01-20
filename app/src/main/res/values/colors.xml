@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorShoppingCart">#F11717</color>
+    <color name="withe">#FFFFFF</color>
+    <color name="fontRed">#ffd81e06</color>
+    <color name="fontRedPressed">#b00d10</color>
+    <color name="fontPink">#F88B8B</color>
+    <color name="backgroundColor">#FFF2F2F2</color>
+    <color name="fontNormal">#ff333333</color>
+    <color name="fontDeepGrey">#ff666666</color>
+    <color name="fontGrey">#868687</color>
+    <color name="fontGreen">#4AA460</color>
+    <color name="fontBlack">#ff222222</color>
+    <color name="fontBlue">#FF4BA7E8</color>
+    <color name="fontGold">#DEB57E</color>
+    <color name="divider">#ffdddddd</color>
+    <color name="date_picker_text_light">#59B29C</color>
+    <color name="fontOrange">#FFFF7900</color>
+    <color name="bacShallowGrey">#FBFBFB</color>
+    <!--页面背景的颜色-->
+    <color name="color_page_bg">#eaedef</color>
+
+    <color name="colorWhite">#ffffffff</color>
+
+    <!--主页tab背景-->
+    <color name="colorTabBg">#ffffffff</color>
+    <color name="colorTabTextCheck">#ffce3d3a</color>
+    <color name="colorTabTextNormal">#585858</color>
+    <color name="colorTabLine">#ffce3d3a</color>
+    <color name="province_line_border">#C7C7C7</color>
+    <!--侧边栏分割线-->
+    <color name="colorNavLine">#E0E0E0</color>
+
+
+    <!--分割线-->
+    <color name="colorLine">#EBEBEB</color>
+    <!--首页分割线-->
+    <color name="colorHomeLine">#fff2f2f2</color>
+
+    <color name="colorLineDeep">#BBBBBB</color>
+
+    <!--item的分割线-->
+    <color name="colorLineItem">#ffe8e8e8</color>
+    <color name="colorHint">#DDDDDD</color>
+    <!--tab标签栏文字的颜色-->
+    <color name="colorTabText">#585858</color>
+    <!--正文文字颜色-->
+    <color name="colorContent">#ff333333</color>
+    <!--水波纹或5.0以下选择器颜色-->
+    <color name="tabBackground">#777D7D7D</color>
+    <!--item的水波纹颜色-->
+    <color name="itemBackground">#DD7D7D7D</color>
+    <!--item的5.0一下版本选择器颜色-->
+    <color name="itemLowBackground">#d9d9d9</color>
+
+    <!--透明色-->
+    <color name="colorTransparent">#00000000</color>
+    <!--半透明-->
+    <color name="colorBanTransparent">#11000000</color>
+    <!--首页item文字颜色-->
+    <color name="colorSubtitle">#999</color>
+
+    <color name="colorTitle">#666</color>
+    <!--谈红色  用于首页调整点击变色-->
+    <color name="colorSmallRed">#faebeb</color>
+
+    <!--电影评分-->
+    <color name="colorRateRed">#FB5B81</color>
+
+    <!--没有水波纹效果的颜色选择器-->
+    <color name="colorItemBackground">#d9d9d9</color>
+
+    <!--选择分类按下颜色-->
+    <color name="colorChoosePress">#DDD</color>
+
+    <!--暂时用于反馈文字-->
+    <color name="text_common">#191919</color>
+
+    <color name="text_deed_bg">#f6f6f6</color>
+    <!--dialog的查看详情键-->
+    <color name="colorBtDialog">#38659C</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#808080</color>
+
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#008000</color>
+    <color name="blue">#0000FF</color>
+    <color name="orange">#FFA500</color>
+
+    <color name="colorPrimaryHalf">#9003A9F4</color>
+    <color name="colorAccentHalf">#9000E5FF</color>
+    <color name="gray_font_dark">#646464</color>
+    <color name="gray_light">#f2f2f2</color>
+    <color name="appColorPrimary">#FFD022</color>
+    <color name="appColorPrimaryDark">#FFD022</color>
+    <color name="appColorAccent">#FFD022</color>
+    <color name="lightBlue">#0e50b3</color>
+</resources>
