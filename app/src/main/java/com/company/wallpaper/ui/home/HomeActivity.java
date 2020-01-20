@@ -103,10 +103,7 @@ public class HomeActivity extends MVVMActivity<ActivityHomeBinding, HomeActivity
     }
 
 
-    @Override
-    protected boolean isChangeStateBar() {
-        return false;
-    }
+
 
 
     private void initTabView() {

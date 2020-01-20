@@ -15,7 +15,7 @@ android {
         key {
             keyAlias 'smkj'
             keyPassword 'shunmaikeji'
-            storeFile file('/Users/yuchengyang/androidWorkspace/android-master/android-zhirong/Untitled')
+            storeFile file('F:\\AndroidStudy\\wallpaper\\Untitled')
             storePassword 'shunmaikeji'
         }
     }

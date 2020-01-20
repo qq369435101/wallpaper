@@ -14,8 +14,6 @@
             titlebar:centerCustomView="@layout/layout_custom_center"
             titlebar:centerType="customView"
             titlebar:fillStatusBar="false"
-            titlebar:leftDrawable="@color/withe"
-            titlebar:leftType="imageButton"
             titlebar:showBottomLine="true" />
 
         <android.support.v4.view.ViewPager
