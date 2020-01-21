@@ -2,13 +2,18 @@ package com.company.wallpaper.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
+import android.view.DragEvent;
+import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.View;
 
 import com.company.wallpaper.R;
 import com.company.wallpaper.app.BaseFragment;
@@ -108,36 +113,29 @@ public class HomeActivity extends MVVMActivity<ActivityHomeBinding, HomeActivity
 
 
     private void initTabView() {
-//        BottomNavigationView navigationView = bindingView.navigationHome;
-//        navigationView.setItemHorizontalTranslationEnabled(false);
-//        navigationView.setItemIconTintList(null);
-//        navigationView.setOnNavigationItemSelectedListener(menuItem -> {
-//            if (menuItem.getItemId() == R.id.tab4) {
-//                Utils.setStatusTextColor(false, this);
-//            } else {
-//                Utils.setStatusTextColor(true, this);
-//            }
-//            switch (menuItem.getItemId()) {
-//                case R.id.tab1: {
-//                    showFragment(0);
-//                    return true;
-//                }
-//                case R.id.tab2: {
-//                    showFragment(1);
-//                    return true;
-//                }
-//                case R.id.tab3: {
-//                    showFragment(2);
-//                    return true;
-//                }
-//                case R.id.tab4: {
-//                    showFragment(3);
-//                    return true;
-//                }
-//            }
-//            return false;
-//        });
-    }
+        bindingView.titleBar.getLeftImageButton().setOnClickListener(v -> bindingView.drawMain.openDrawer(Gravity.LEFT));
+        bindingView.drawMain.setDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(@NonNull View view, float v) {
+
+            }
+
+            @Override
+            public void onDrawerOpened(@NonNull View view) {
+
+            }
+
+            @Override
+            public void onDrawerClosed(@NonNull View view) {
+
+            }
+
+            @Override
+            public void onDrawerStateChanged(int i) {
+
+            }
+        });
+      }
 
     private void showFragment(int position) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
