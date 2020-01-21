@@ -8,15 +8,6 @@
         android:layout_height="match_parent"
         android:id="@+id/ll_home"
         android:orientation="vertical">
-        <com.wuhenzhizao.titlebar.widget.CommonTitleBar
-            android:id="@+id/title_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            titlebar:leftDrawable="@color/withe"
-            titlebar:showBottomLine="true"
-            titlebar:centerText="动态壁纸"
-            titlebar:centerType="textView"
-            titlebar:fillStatusBar="false" />
 
         <com.flyco.tablayout.CommonTabLayout
             android:id="@+id/tablayout"

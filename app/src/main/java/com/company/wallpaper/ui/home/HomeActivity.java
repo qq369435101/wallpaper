@@ -16,6 +16,7 @@ import com.company.wallpaper.app.MVVMActivity;
 import com.company.wallpaper.databinding.ActivityHomeBinding;
 import com.company.wallpaper.databinding.DialogPrivacyBinding;
 import com.company.wallpaper.ui.PaperListActivity;
+import com.company.wallpaper.ui.SearchActivity;
 import com.company.wallpaper.ui.WebViewActivity;
 import com.company.wallpaper.utils.ShareUtils;
 import com.company.wallpaper.view.CustomDialog;
@@ -27,7 +28,6 @@ import java.util.ArrayList;
 
 public class HomeActivity extends MVVMActivity<ActivityHomeBinding, HomeActivityViewModel> {
     private ArrayList<BaseFragment> fragments = new ArrayList<>();
-    private FragmentTransaction transaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public class HomeActivity extends MVVMActivity<ActivityHomeBinding, HomeActivity
             customDialog.getBindView().tv2.setOnClickListener(v -> WebViewActivity.toWebView(HomeActivity.this, "注册协议", "http://www.rioses.top/?act=zyPrivacy"));
             customDialog.show();
         }
+        bindingView.titleBar.getRightImageButton().setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, SearchActivity.class)));
 
     }
 
@@ -72,19 +73,21 @@ public class HomeActivity extends MVVMActivity<ActivityHomeBinding, HomeActivity
     }
 
     private class MyPagerAdapter extends FragmentStatePagerAdapter {
-        private String[] tabs = {"商品", "详情", "评价"};
+        private String[] tabs = {"首页", "分类", "动态"};
+
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
         }
+
         @Override
         public CharSequence getPageTitle(int position) {
             return tabs[position];
         }
+
         @Override
         public int getCount() {
             return fragments.size();
         }
-
 
 
         @Override
@@ -98,12 +101,10 @@ public class HomeActivity extends MVVMActivity<ActivityHomeBinding, HomeActivity
     protected boolean isSwipeBackEnable() {
         return false;
     }
-    private void initTab(){
+
+    private void initTab() {
 
     }
-
-
-
 
 
     private void initTabView() {

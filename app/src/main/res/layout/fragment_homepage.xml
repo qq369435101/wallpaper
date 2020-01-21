@@ -15,21 +15,6 @@
         android:focusableInTouchMode="true"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:background="@drawable/shape_circle_background_grey"
-            android:drawableStart="@mipmap/icon_search"
-            android:drawablePadding="8dp"
-            android:paddingStart="9dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:text="搜索"
-            android:textColor="@color/fontGrey"
-            android:textSize="18dp" />
 
         <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:id="@+id/refreshLayout"
@@ -56,9 +41,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="165dp"
                         android:background="@color/withe"
-                        android:visibility="gone"
                         app:delay_time="7000"
-
                         app:image_scale_type="fit_xy"
                         app:indicator_drawable_selected="@drawable/shape_circle_background"
                         app:indicator_drawable_unselected="@drawable/shape_indicator"
@@ -68,7 +51,6 @@
                         app:is_auto_play="true" />
 
                     <LinearLayout
-                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="96dp"
                         android:background="@color/withe"

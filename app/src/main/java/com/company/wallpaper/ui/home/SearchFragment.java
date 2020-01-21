@@ -35,8 +35,6 @@ public class SearchFragment extends BaseFragment<FragmentSearchBinding> implemen
         initLv();
         initView();
         showContentView();
-        bindingView.llSearch.setPadding(0, getStateBarHeight() * 3 / 2, 0, 0);
-        bindingView.tvSearch.setOnClickListener(v -> startActivity(new Intent(getActivity(), SearchActivity.class)));
 
 
     }

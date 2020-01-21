@@ -22,7 +22,6 @@ import com.flyco.tablayout.listener.OnTabSelectListener;
 import java.util.ArrayList;
 import java.util.List;
 
-//import com.alibaba.android.arouter.launcher.ARouter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,7 +42,6 @@ public class WallpagerFragment extends BaseFragment<FragmentWallpagerBinding> {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         showContentView();
-        bindingView.llHome.setPadding(0, getStateBarHeight() * 3 / 2, 0, 0);
         getData();
     }
 

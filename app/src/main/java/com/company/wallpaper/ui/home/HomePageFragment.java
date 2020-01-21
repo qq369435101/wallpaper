@@ -54,7 +54,6 @@ public class HomePageFragment extends BaseFragment<FragmentHomepageBinding> {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        bindingView.llHomepage.setPadding(0, getStateBarHeight() * 3 / 2, 0, 0);
         homePageAdapter = new HomePageAdapter(getActivity(), new ArrayList<>());
 //        adapter = new MyAdapter(getActivity(), new ArrayList<>());
         bindingView.recHome.setAdapter(homePageAdapter);
@@ -62,7 +61,6 @@ public class HomePageFragment extends BaseFragment<FragmentHomepageBinding> {
             Intent intent = new Intent(getActivity(), VideoActivity.class);
             startActivity(intent);
         });
-        bindingView.tvSearch.setOnClickListener(v -> startActivity(new Intent(getActivity(), SearchActivity.class)));
         viewModel = ViewModelProviders.of(this).get(HomeActivityViewModel.class);
         bindingView.refreshLayout.setOnRefreshListener(refreshLayout -> HomePageFragment.this.onRefresh());
         bindingView.refreshLayout.setOnLoadMoreListener(refreshLayout -> getData());

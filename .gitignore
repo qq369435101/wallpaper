@@ -7,3 +7,4 @@
 .externalNativeBuild
 *.apk
 /app/release/
+/.gradle
