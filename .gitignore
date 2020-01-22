@@ -7,5 +7,5 @@
 .externalNativeBuild
 *.apk
 /app/release/
-.gradle
+/.gradle
 *.log
